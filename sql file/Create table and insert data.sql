@@ -77,7 +77,7 @@ create table Course_table(
     CID     char(9) primary key     not null,
     Cname           varchar(255)    not null,
     Descriptionn    varchar(255)    not null,
-    Price           varchar(255)    default 0    check   (Price >= 0),
+    Price           int    default 0    check   (Price >= 0),
     Sub_nnumber     int             default 0 check   (Sub_nnumber >= 0),
     Lecturer        varchar(15)     not null,
     Course_rating   int             default 0   check   (Course_rating <= 5 and Course_rating >= 0),                    -- vi du 3.1
@@ -99,12 +99,13 @@ create table Tag_table(
         on delete cascade
 );
 
+--
 create table Quiz_table(
-    QuizID          char(9) primary key     not null,
-    Time_allowed    timestamp               not null,
-    Max_numbertaken int                     not null,
-    Type_of_score   varchar(15)             default 'Average' check (Type_of_score='Max' or Type_of_score='Average'),
-    Course          char(9)                 not null,
+    QuizID           char(6) primary key     not null,
+    Time_allowed_min int               not null,
+    Max_numbertaken  int                     not null,
+    Type_of_score    varchar(15)             default 'Average' check (Type_of_score='Max' or Type_of_score='Average'),
+    Course           char(9)                 not null,
     
     constraint  fkq
         foreign     key(Course)
@@ -112,10 +113,11 @@ create table Quiz_table(
         on delete cascade
 );
 
+--
 -- Làm trigger cho Num_taken < Max_numbertaken
 create table Quiz_taken_table(
-    Num_taken   int not null,
-    QuizID      char(9)     not null,
+    Num_taken   int not null check (Num_taken > 0),
+    QuizID      char(6)     not null,
     StudentID   varchar(15) not null,
     Score       char(3)     default 0 check (Score >= 0 and Score <= 10),
     
@@ -131,8 +133,9 @@ create table Quiz_taken_table(
         on delete cascade
 );
 
+--
 create table Learningmaterial(
-    ContentID   char(9) primary key not null,
+    ContentID   char(5) primary key not null,
     Author      varchar(15),
     Typee       varchar(255)        not null check (Typee = 'Video' or Typee = 'Slide' or Typee = 'Audio' or Typee = 'Misc'),
     CourseID      char(9)             not null,
@@ -175,7 +178,6 @@ create table Register_table(
     RegisterC   char(9)     not null,
     S_date      date        not null,
     E_date      date        not null,
-    Progress    varchar(15) not null,
     Score       int         check   (Score >= 0 and Score <= 10),
     Rating      int         check   (Rating >= 0 and Rating <= 5),
     IID         int,
