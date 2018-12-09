@@ -1,7 +1,34 @@
-create trigger trigger_insert instead of insert on Quiz_taken_table
-for each row
-begin
-    if (:new)
-    insert Quiz_table
-    where QuizId = :new.QuizId 
-end;
+
+CREATE SEQUENCE Tmajor_id_seq;
+CREATE OR REPLACE TRIGGER "Tmajor_id" 
+BEFORE INSERT ON TMajor_table 
+FOR EACH ROW
+
+BEGIN
+  SELECT Tmajor_id_seq.NEXTVAL
+  INTO   :new.MajorID
+  FROM   dual;
+END;
+/
+CREATE SEQUENCE Tdegree_id_seq;
+CREATE OR REPLACE TRIGGER "TDegree_id"
+BEFORE INSERT ON TDegree_table 
+FOR EACH ROW
+
+BEGIN
+  SELECT Tdegree_id_seq.NEXTVAL
+  INTO   :new.DegreeID
+  FROM   dual;
+END;
+/
+CREATE SEQUENCE Tag_id_seq;
+CREATE OR REPLACE TRIGGER "Tag_id" 
+BEFORE INSERT ON Tag_table 
+FOR EACH ROW
+
+BEGIN
+  SELECT Tag_id_seq.NEXTVAL
+  INTO   :new.TagId
+  FROM   dual;
+END;
+/

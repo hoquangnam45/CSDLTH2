@@ -6,13 +6,14 @@ INSERT INTO Course_table VALUES ('000000017','Programming begin 101','Lorem ipsu
 INSERT INTO Course_table VALUES ('000000018','Data Structure','Lorem ipsum dolor sit amet','4','0','lpatriskson3','4');
 
 -- Nhập tag --
-INSERT INTO Tag_table VALUES('000000014', 'Machine')
-INSERT INTO Tag_table VALUES('000000014', 'Computer')
-INSERT INTO Tag_table VALUES('000000015', 'Database')
-INSERT INTO Tag_table VALUES('000000015', 'Computer')
-INSERT INTO Tag_table VALUES('000000016', 'Financial')
-INSERT INTO Tag_table VALUES('000000016', 'Math')
-INSERT INTO Tag_table VALUES('000000017', 'Programming')
-INSERT INTO Tag_table VALUES('000000017', 'Math')
-INSERT INTO Tag_table VALUES('000000018', 'Data')
-INSERT INTO Tag_table VALUES('000000018', 'Structure')
+INSERT INTO Tag_table VALUES('','000000014', 'Machine');
+INSERT INTO Tag_table VALUES('','000000014', 'Computer');
+INSERT INTO Tag_table VALUES('','000000015', 'Database');
+INSERT INTO Tag_table VALUES('','000000015', 'Computer');
+INSERT INTO Tag_table VALUES('','000000016', 'Financial');
+INSERT INTO Tag_table VALUES('','000000016', 'Math');
+INSERT INTO Tag_table VALUES('','000000017', 'Programming');
+INSERT INTO Tag_table VALUES('','000000017', 'Math');
+INSERT INTO Tag_table VALUES('','000000018', 'Data');
+INSERT INTO Tag_table VALUES('','000000018', 'Structure');
+

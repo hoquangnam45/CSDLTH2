@@ -48,11 +48,26 @@ INSERT INTO teacher_table VALUES ('rabbs7','kinh te luat');
 INSERT INTO teacher_table VALUES ('tsolan9','oxford');
 
 -- nhập chuyên ngành teacher -- 
+INSERT INTO TMajor_table VALUES ('','crignall1','Chemistry');
+INSERT INTO TMajor_table VALUES ('','crignall1','Computer engineering');
+INSERT INTO TMajor_table VALUES ('','lpatriskson3','Civic engineering');
+INSERT INTO TMajor_table VALUES ('','ccasaro5','Astrophysicist');
+INSERT INTO TMajor_table VALUES ('','rabbs7','Lawyer');
+INSERT INTO TMajor_table VALUES ('','tsolan9','Environmental engineering');
 
 -- nhập bằng cấp của giáo viên --
+INSERT INTO TDegree_table VALUES ('','crignall1','master');
+INSERT INTO TDegree_table VALUES ('','crignall1','bachelor');
+INSERT INTO TDegree_table VALUES ('','lpatriskson3','doctor');
+INSERT INTO TDegree_table VALUES ('','ccasaro5','engineer');
+INSERT INTO TDegree_table VALUES ('','rabbs7','master');
+INSERT INTO TDegree_table VALUES ('','tsolan9','bachelor');
 
 -- nhập ban list --
-
+INSERT INTO ban_table VALUES('eovey2', 'pstoile0');
+INSERT INTO ban_table VALUES('mroumier6', 'pstoile0');
+INSERT INTO ban_table VALUES('abrowne8', 'kgallego4');
+INSERT INTO ban_table VALUES('fmccuaig0', 'gfilipson6');
 
 
 -- nhập student

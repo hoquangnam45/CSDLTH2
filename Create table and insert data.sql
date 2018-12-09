@@ -1,3 +1,4 @@
+--
 create table user_table(
     username    varchar(15)     primary key,
     pass        varchar(15)     not null,
@@ -8,7 +9,7 @@ create table user_table(
     dob         date            not null,
     addresu     varchar(255)    not null
 );
-
+--
 create table admin_table(
     username    varchar(15)     primary key,
     constraint  fk_admin
@@ -16,7 +17,7 @@ create table admin_table(
         references  user_table(username)
         on delete cascade
 );
-
+--
 create table student_table(
     username    varchar(15) primary key     not null,
     occupation  varchar(255),
@@ -25,7 +26,7 @@ create table student_table(
         references user_table(username)
         on delete cascade
 );
-
+--
 create table teacher_table(
     username    varchar(15)     primary key,
     university  varchar(255)     not null,
@@ -34,9 +35,9 @@ create table teacher_table(
         references user_table(username)
         on delete cascade
 );
-
+--
 create table TDegree_table(
-    DegreeID    int not null identity primary key,
+    DegreeID    int not null primary key,
     Username    varchar(15)     not null,
     Degree_t    varchar(255)    not null,
     
@@ -45,9 +46,9 @@ create table TDegree_table(
         references  teacher_table(username)
         on delete cascade
 );
-
+--
 create table TMajor_table(
-    MajorID     int not null identity primary key,
+    MajorID     int not null primary key,
     Username    varchar(15)     not null,
     Major       varchar(255)    not null,
     
@@ -56,7 +57,7 @@ create table TMajor_table(
         references teacher_table(username)
         on delete cascade
 );
-
+--
 create table ban_table(
     username    varchar(15)     primary key,
     banner      varchar(15),
@@ -71,7 +72,7 @@ create table ban_table(
 );
 
 --------------------------------------------------------------
-
+--
 create table Course_table(
     CID     char(9) primary key     not null,
     Cname           varchar(255)    not null,
@@ -86,8 +87,9 @@ create table Course_table(
         references  teacher_table(username)
         on delete cascade
 );
+--
 create table Tag_table(
-    TagId   int not null identity primary key, 
+    TagId   int not null primary key, 
     CID     char(9)         not null,
     Tagg    varchar(255)    not null,
 
